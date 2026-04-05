@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Roland Holzer | Underwater Cinematographer</title>
+  <meta
+    name="description"
+    content="Professional underwater cinematography for feature films, TV productions and commercials by Roland Holzer."
+  />
+  <meta
+    name="keywords"
+    content="underwater cinematographer, underwater camera operator, unterwasserkamera film, underwater filming europe, underwater cameraman austria, ARRI underwater housing, unterwasser kameramann"
+  />
+  <meta name="author" content="Roland Holzer" />
+  <meta name="robots" content="index,follow" />
+
+  <link rel="canonical" id="canonical-link" href="https://www.rolandholzer.at/" />
+  <link rel="alternate" hreflang="de" id="hreflang-de" href="https://www.rolandholzer.at/" />
+  <link rel="alternate" hreflang="en" id="hreflang-en" href="https://www.rolandholzer.com/" />
+  <link rel="alternate" hreflang="x-default" id="hreflang-default" href="https://www.rolandholzer.com/" />
+
+  <meta property="og:title" id="og-title" content="Roland Holzer | Underwater Cinematographer" />
+  <meta
+    property="og:description"
+    id="og-description"
+    content="Professional underwater cinematography for feature films, TV productions and commercials."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" id="og-url" content="https://www.rolandholzer.at/" />
+  <meta property="og:image" id="og-image" content="https://www.rolandholzer.at/herho.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" id="twitter-title" content="Roland Holzer | Underwater Cinematographer" />
+  <meta
+    name="twitter:description"
+    id="twitter-description"
+    content="Professional underwater cinematography for feature films, TV productions and commercials."
+  />
+  <meta name="twitter:image" id="twitter-image" content="https://www.rolandholzer.at/herho.png" />
+
+  <script type="application/ld+json" id="json-ld-person">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Roland Holzer",
+    "jobTitle": "Underwater Cinematographer",
+    "url": "https://www.rolandholzer.at",
+    "sameAs": [
+      "https://www.instagram.com/roland.holzer",
+      "https://www.crew-united.com/de/Roland-Holzer_328179.html",
+      "https://www.aacamera.org/mitglied/roland.holzer/"
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg-dark: #050f19;
+      --bg-nav: rgba(6, 20, 31, 0.92);
+      --text-main: #ffffff;
+      --text-soft: #9fd4ea;
+      --accent: #7ec8e3;
+      --accent-dark: #3fa9c9;
+      --card-top: rgba(10, 26, 40, 0.82);
+      --card-bottom: rgba(6, 18, 30, 0.9);
+      --field-bg: rgba(255, 255, 255, 0.08);
+      --radius-xl: 32px;
+      --radius-lg: 16px;
+      --shadow-heavy: 0 60px 160px rgba(0, 0, 0, 0.65);
+      --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.35);
+      --parallax-offset: 0px;
+      --parallax-scale: 1.08;
+      --max-width: 1140px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text-main);
+      line-height: 1.6;
+      text-align: center;
+      background: var(--bg-dark);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(5, 15, 25, 0.78), rgba(5, 15, 25, 0.92)),
+        url("herho.png") center / cover no-repeat;
+      filter: blur(18px) saturate(110%);
+      transform: translateY(var(--parallax-offset)) scale(var(--parallax-scale));
+      will-change: transform;
+      z-index: -2;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--bg-nav);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.22);
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      position: relative;
+    }
+
+    .menu-toggle {
+      font-size: 1.6rem;
+      cursor: pointer;
+      color: var(--accent);
+      font-weight: bold;
+      user-select: none;
+    }
+
+    .menu {
+      position: absolute;
+      top: 64px;
+      right: 20px;
+      background: #06141f;
+      border-radius: 12px;
+      padding: 18px 22px;
+      display: none;
+      flex-direction: column;
+      gap: 14px;
+      box-shadow: var(--shadow-soft);
+      text-align: right;
+      min-width: 220px;
+    }
+
+    .menu.show {
+      display: flex;
+    }
+
+    .menu a,
+    .lang-switch button {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: opacity 0.25s ease;
+      background: none;
+      border: none;
+      padding: 0;
+      font: inherit;
+    }
+
+    .menu a:hover,
+    .lang-switch button:hover {
+      opacity: 0.8;
+    }
+
+    .lang-switch {
+      color: var(--text-soft);
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 20px 80px;
+      background:
+        linear-gradient(rgba(5, 15, 25, 0.55), rgba(5, 15, 25, 0.88)),
+        url("herho.png") center / cover no-repeat;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 40%, rgba(126, 200, 227, 0.12), transparent 38%),
+        linear-gradient(180deg, rgba(126, 200, 227, 0.06), transparent 30%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 960px;
+      padding: 0 20px;
+    }
+
+    .hero-subline {
+      color: var(--text-soft);
+      font-size: 1rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      margin: 0 0 20px;
+      font-size: clamp(2.4rem, 6vw, 5.4rem);
+      line-height: 0.95;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero p {
+      margin: 0 auto 30px;
+      max-width: 760px;
+      color: #d6edf7;
+      font-size: 1.05rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 25px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      padding: 14px 28px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #003044;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.28);
+    }
+
+    .hero-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 44px rgba(0, 0, 0, 0.38);
+    }
+
+    .hero-button.secondary {
+      background: transparent;
+      color: var(--text-main);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    section.content-section {
+      position: relative;
+      max-width: var(--max-width);
+      margin: 40px auto;
+      padding: 90px 20px 80px;
+      background: linear-gradient(var(--card-top), var(--card-bottom));
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius-xl);
+      box-shadow:
+        var(--shadow-heavy),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      animation: fadeUp 0.8s ease;
+    }
+
+    section.content-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(
+        180deg,
+        rgba(126, 200, 227, 0.12),
+        transparent 35%
+      );
+      pointer-events: none;
+    }
+
+    section.content-section h2 {
+      position: relative;
+      display: inline-block;
+      margin: 0 0 30px;
+      padding-bottom: 8px;
+      z-index: 1;
+    }
+
+    section.content-section h2::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: min(800px, 80vw);
+      height: 2px;
+      border-radius: 10px;
+      background: linear-gradient(
+        to right,
+        rgba(126, 200, 227, 0),
+        rgba(126, 200, 227, 0.25),
+        rgba(126, 200, 227, 0)
+      );
+    }
+
+    .section-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-text,
+    .seo-copy,
+    .keyword-copy {
+      max-width: 840px;
+      margin: 20px auto 0;
+      text-align: justify;
+      line-height: 1.85;
+    }
+
+    .seo-copy,
+    .keyword-copy {
+      opacity: 0.92;
+      color: #d7edf7;
+      font-size: 0.98rem;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 30px;
+    }
+
+    .gallery figure {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      margin: 0;
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .gallery figure:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+      display: block;
+    }
+
+    .services-images {
+      margin-top: 30px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .services-images img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .contact-form {
+      max-width: 620px;
+      margin: 40px auto 0;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-group {
+      width: 100%;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: none;
+      background: var(--field-bg);
+      color: var(--text-main);
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: #bcdbea;
+    }
+
+    .contact-form button {
+      margin-top: 8px;
+      padding: 14px;
+      border-radius: 14px;
+      border: none;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #003044;
+      font-size: 1.05rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: none;
+    }
+
+    .contact-form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .social-links {
+      margin-top: 42px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .social-links a img {
+      height: 50px;
+      width: auto;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      display: block;
+    }
+
+    .social-links a img:hover {
+      transform: scale(1.08);
+      opacity: 0.85;
+    }
+
+    footer {
+      margin-top: 20px;
+      padding: 20px 0 30px;
+      text-align: center;
+      color: var(--text-soft);
+    }
+
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 20px;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 0;
+    }
+
+    .visually-hidden-seo {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (min-width: 700px) {
+      .gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (min-width: 900px) {
+      .menu {
+        position: static;
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        gap: 30px;
+        min-width: auto;
+      }
+
+      .menu-toggle {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 92vh;
+        padding-top: 110px;
+      }
+
+      section.content-section {
+        margin: 20px 14px;
+        padding: 70px 18px 60px;
+        border-radius: 24px;
+      }
+
+      .services-images {
+        grid-template-columns: 1fr;
+      }
+
+      .about-text,
+      .seo-copy,
+      .keyword-copy {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="menu-toggle" onclick="toggleMenu()" aria-label="Menü öffnen">☰</div>
+
+      <div class="menu" id="menu">
+  <a href="#portfolio" class="nav-link">Selected Work</a>
+  <a href="#about" class="nav-link">About</a>
+  <a href="#services" class="nav-link">Services</a>
+  <a href="#contact" class="nav-link">Contact</a>
+
+  <div class="lang-switch" aria-label="Sprachauswahl">
+    <button type="button" onclick="forceLang('de')">DE</button>
+    <span>|</span>
+    <button type="button" onclick="forceLang('en')">EN</button>
+  </div>
+</div>
+    </div>
+  </nav>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-subline">Roland Holzer aac</div>
+
+      <h1 class="lang lang-en">Underwater Cinematography</h1>
+      <h1 class="lang lang-de">Unterwasser Kameramann</h1>
+
+      <p class="lang lang-en">
+        Feature Films · TV Productions · Commercials 
+      </p>
+      <p class="lang lang-de">
+        Spielfilm · TV-Produktionen · Werbung 
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#contact" class="hero-button lang lang-en">Request Project</a>
+        <a href="#contact" class="hero-button lang lang-de">Projekt anfragen</a>
+
+        <a href="#services" class="hero-button secondary lang lang-en">View Equipment</a>
+        <a href="#services" class="hero-button secondary lang lang-de">Equipment ansehen</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="content-section">
+    <div class="section-inner">
+      <h2 class="lang lang-en">Selected Work</h2>
+      <h2 class="lang lang-de">Ausgewählte Arbeiten</h2>
+
+      <p class="lang lang-en">Excerpt from film and television productions.</p>
+      <p class="lang lang-de">Auszug aus Film- und Fernsehproduktionen.</p>
+
+      <div class="gallery">
+        <figure onclick="openLightbox(this)">
+          <img src="WHB.jpg" alt="Underwater cinematography for feature film Welcome Homeb Baby" />
+        </figure>
+        <figure onclick="openLightbox(this)">
+          <img src="totenfrau.jpg" alt="Underwater camera work for TV series Totenfrau 2" />
+        </figure>
+        <figure onclick="openLightbox(this)">
+          <img src="Waswirwollten.jpg" alt="Underwater filming for feature film Was wir wollten" />
+        </figure>
+
+        <figure onclick="openLightbox(this)">
+          <img src="Mermaids.jpg" alt="Underwater cinematography for the feature Mermaids dont cry" />
+        </figure>
+        <figure onclick="openLightbox(this)">
+          <img src="113.jpg" alt="Underwater filming for the tv series 113" />
+        </figure>
+        <figure onclick="openLightbox(this)">
+          <img src="NeoNuggets.jpg" alt="Underwater filming for the feature film Neo Nuggets" />
+        </figure>
+
+        <figure onclick="openLightbox(this)">
+          <img src="Atemlos.jpg" alt="Underwater filming for Austrian TV production Die Toten vom Bodensee - Atemlos" />
+        </figure>
+        <figure onclick="openLightbox(this)">
+          <img src="MädchenMädchen.jpg" alt="Underwater cinematography for feature film Mädchen Mädchen" />
+        </figure>
+        <figure onclick="openLightbox(this)">
+          <img src="schoolsofChampions.jpg" alt="Underwater filming for series School of Champions Season 1" />
+        </figure>
+
+        <figure onclick="openLightbox(this)">
+          <img src="Gina.jpg" alt="Underwater camera shot for feature film Gina" />
+        </figure>
+        <figure onclick="openLightbox(this)">
+          <img src="EverAfter.jpg" alt="Underwater fantasy film scene Ever After" />
+        </figure>
+        <figure onclick="openLightbox(this)">
+          <img src="DasBild.jpg" alt="Underwater visual storytelling scene Das Bild im Haus" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="content-section">
+    <div class="section-inner">
+      <h2 class="lang lang-en">About Me</h2>
+      <h2 class="lang lang-de">Über Mich</h2>
+
+      <p class="about-text lang lang-en">
+        Roland Holzer is an Austrian underwater cameraman with a strong background in visual storytelling.
+        He holds a Bachelor’s degree in Media Technology and a Master’s degree in Digital Media Technologies
+        from the University of Applied Sciences St. Pölten and has been working in the film industry since 2011.
+        Since 2016, he has specialized in underwater cinematography, combining technical expertise with a passion for diving.
+        His work includes numerous feature film productions, and he is also active as a lecturer, sharing his professional
+        experience with the next generation of filmmakers.
+      </p>
+
+      <p class="about-text lang lang-de">
+        Roland Holzer ist ein österreichischer Unterwasserkameramann mit starkem Fokus auf visuelles Storytelling.
+        Er hat einen Bachelorabschluss in Medientechnik sowie einen Masterabschluss in Digital Media Technologies von der FH St. Pölten
+        und ist seit 2011 in der Filmbranche tätig. Seit 2016 ist er auf Unterwasserkamera spezialisiert und verbindet dabei technisches
+        Know-how mit seiner Leidenschaft für das Tauchen. Neben seiner Arbeit an zahlreichen Spielfilmproduktionen ist er auch als Lektor tätig
+        und gibt seine berufliche Erfahrung an die nächste Generation von Filmschaffenden weiter.
+      </p>
+
+      <div class="seo-copy lang lang-en">
+        <p>
+          Roland Holzer is a professional underwater cinematographer and underwater camera operator working across Europe.
+          He specializes in underwater filming for feature films, television productions and commercial projects.
+          With high-end underwater camera systems for ARRI and RED, he delivers reliable results in demanding environments,
+          including deep-water filming up to 76 meters.
+        </p>
+      </div>
+
+      <div class="seo-copy lang lang-de">
+        <p>
+          Roland Holzer ist professioneller Unterwasserkameramann und Unterwasser-Kameraoperator für Spielfilm,
+          Fernsehen und Werbefilmproduktionen in Österreich und Europa. Mit hochwertigen Unterwasserkamera-Systemen
+          für ARRI und RED realisiert er verlässliche Unterwasseraufnahmen auch unter anspruchsvollen Bedingungen
+          und in großen Tiefen bis 76 Meter.
+        </p>
+      </div>
+
+      <div class="keyword-copy lang lang-en">
+        <p>
+          Keywords: underwater cinematographer, underwater camera operator, underwater filming Europe, underwater cameraman Austria,
+          ARRI underwater housing, RED underwater housing, feature film underwater camera, underwater filming production.
+        </p>
+      </div>
+
+      <div class="keyword-copy lang lang-de">
+        <p>
+          Keywords: Unterwasserkamera Film, Unterwasser Kameramann, Unterwasserfilm Produktion, Unterwasserkameramann Österreich,
+          Unterwasseraufnahmen Spielfilm, ARRI Unterwassergehäuse, RED Unterwasserkamera, Unterwasserkamera Europa.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="content-section">
+    <div class="section-inner">
+      <h2 class="lang lang-en">Professional underwater camera solutions</h2>
+      <h2 class="lang lang-de">Professionelle Unterwasser-Kameralösungen</h2>
+
+      <p class="about-text lang lang-en">
+        Two Gates underwater housings for ARRI Mini, Mini LF, ARRI 35 and RED DSMC2 cameras.
+        Full operator camera control available. Focus, iris and zoom can be operated by motors or directly on the housing.
+        Hard-wired with 30 m HDSDI and LCS for HI5 or WCU4. Compatible with a wide range of cinema lenses,
+        using the Gates SP110 ring system with 10″ and 8″ dome ports. Rated to 76 m operating depth.
+        Perfectly neutrally balanced housings with versatile mounting options for cranes or underwater tripods.
+        Underwater communication via full-face masks or Lubell Labs speakers. Complete diving equipment for wet and dry diving
+        in cold and warm water available.
+      </p>
+
+      <p class="about-text lang lang-de">
+        Zwei Gates-Unterwassergehäuse für ARRI Mini, Mini LF, ARRI 35 / 35 Extreme und RED DSMC2 Kameras.
+        Vollständige Kamerasteuerung für den Operator verfügbar. Fokus, Blende und Zoom können entweder motorisiert
+        oder direkt am Gehäuse bedient werden. Kabelgebunden mit 30 m HDSDI sowie LCS für HI5 oder WCU4.
+        Kompatibel mit einer großen Auswahl von Kinoobjektiven durch das Gates SP110-Ringsystem mit 10″- und 8″-Domeports.
+        Einsatztiefe bis 76 m. Perfekt neutral austarierte Gehäuse mit vielseitigen Montagemöglichkeiten für Kran oder Unterwasserstativ.
+        Unterwasserkommunikation über Vollgesichtsmasken oder Lubell-Labs-Lautsprecher. Komplette Tauchausrüstung für Nass-
+        und Trockentauchgänge in kaltem und warmem Wasser verfügbar.
+      </p>
+
+      <div class="services-images">
+        <img src="Gates_Mini.jpg" alt="Gates underwater housing for ARRI Mini cinema camera" />
+        <img src="lubell.jpg" alt="Underwater communication system Lubell Labs speaker" />
+        <img src="DEEPDRAGONi.jpg" alt="Professional underwater dome port camera system" />
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="content-section">
+    <div class="section-inner">
+      <h2 class="lang lang-en">Contact</h2>
+      <h2 class="lang lang-de">Kontakt</h2>
+
+      <p class="lang lang-en">
+        Project inquiries, film productions or technical operations — feel free to contact me.
+      </p>
+      <p class="lang lang-de">
+        Projektanfragen, Filmproduktionen oder technische Einsätze — schreiben Sie mir.
+      </p>
+
+      <form class="contact-form" method="POST" action="https://formspree.io/f/mwvnvpez">
+        <div class="form-group">
+          <input type="text" name="name" class="lang lang-en" placeholder="Name" required />
+          <input type="text" name="name" class="lang lang-de" placeholder="Name" required />
+        </div>
+
+        <div class="form-group">
+          <input type="email" name="email" class="lang lang-en" placeholder="Email" required />
+          <input type="email" name="email" class="lang lang-de" placeholder="E-Mail" required />
+        </div>
+
+        <div class="form-group">
+          <input type="text" name="subject" class="lang lang-en" placeholder="Subject" required />
+          <input type="text" name="subject" class="lang lang-de" placeholder="Betreff" required />
+        </div>
+
+        <div class="form-group">
+          <textarea name="message" rows="5" class="lang lang-en" placeholder="Message" required></textarea>
+          <textarea name="message" rows="5" class="lang lang-de" placeholder="Nachricht" required></textarea>
+        </div>
+
+        <button type="submit" class="lang lang-en">Send Message</button>
+        <button type="submit" class="lang lang-de">Nachricht senden</button>
+      </form>
+
+      <div class="social-links">
+        <a href="https://www.instagram.com/roland.holzer" target="_blank" rel="noopener noreferrer" title="Instagram">
+          <img src="Insta.png" alt="Instagram" />
+        </a>
+        <a href="https://www.crew-united.com/de/Roland-Holzer_328179.html" target="_blank" rel="noopener noreferrer" title="Crew United">
+          <img src="crewunited.png" alt="Crew United" />
+        </a>
+        <a href="https://www.aacamera.org/mitglied/roland.holzer/" target="_blank" rel="noopener noreferrer" title="AAC">
+          <img src="aac.png" alt="AAC" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Roland Holzer — Underwater Cinematography
+  </footer>
+
+  <div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Vergrößerte Ansicht" />
+  </div>
+
+  <script>
+    const DOMAIN_CONFIG = {
+      "rolandholzer.at": {
+        lang: "de",
+        canonical: "https://www.rolandholzer.at/",
+        ogImage: "https://www.rolandholzer.at/herho.png"
+      },
+      "www.rolandholzer.at": {
+        lang: "de",
+        canonical: "https://www.rolandholzer.at/",
+        ogImage: "https://www.rolandholzer.at/herho.png"
+      },
+      "rolandholzer.com": {
+        lang: "en",
+        canonical: "https://www.rolandholzer.com/",
+        ogImage: "https://www.rolandholzer.com/herho.png"
+      },
+      "www.rolandholzer.com": {
+        lang: "en",
+        canonical: "https://www.rolandholzer.com/",
+        ogImage: "https://www.rolandholzer.com/herho.png"
+      },
+      "underwatercamera.at": {
+        lang: "de",
+        canonical: "https://www.underwatercamera.at/",
+        ogImage: "https://www.underwatercamera.at/herho.png"
+      },
+      "www.underwatercamera.at": {
+        lang: "de",
+        canonical: "https://www.underwatercamera.at/",
+        ogImage: "https://www.underwatercamera.at/herho.png"
+      }
+    };
+
+    function getCurrentConfig() {
+      const host = window.location.hostname.toLowerCase();
+      return DOMAIN_CONFIG[host] || {
+        lang: "en",
+        canonical: window.location.origin + "/",
+        ogImage: window.location.origin + "/herho.png"
+      };
+    }
+
+    function setMetaTags(config) {
+      const isEnglish = config.lang === "en";
+
+      const title = isEnglish
+        ? "Underwater Cinematographer | Roland Holzer | Underwater Camera Europe"
+        : "Unterwasserkamera | Roland Holzer | Unterwasser-Kameramann Österreich";
+
+      const description = isEnglish
+        ? "Roland Holzer is a professional underwater cinematographer based in Austria, specializing in feature films, TV productions and underwater camera systems up to 76m depth."
+        : "Roland Holzer ist professioneller Unterwasserkameramann aus Österreich für Spielfilm, TV-Produktionen und hochwertige Unterwasser-Kamerasysteme bis 76 m Tiefe.";
+
+      document.title = title;
+      document.querySelector('meta[name="description"]').setAttribute("content", description);
+      document.querySelector("#og-title").setAttribute("content", title);
+      document.querySelector("#og-description").setAttribute("content", description);
+      document.querySelector("#twitter-title").setAttribute("content", title);
+      document.querySelector("#twitter-description").setAttribute("content", description);
+
+      document.querySelector("#canonical-link").setAttribute("href", config.canonical);
+      document.querySelector("#og-url").setAttribute("content", config.canonical);
+      document.querySelector("#og-image").setAttribute("content", config.ogImage);
+      document.querySelector("#twitter-image").setAttribute("content", config.ogImage);
+
+      document.querySelector("#hreflang-de").setAttribute("href", "https://www.rolandholzer.at/");
+      document.querySelector("#hreflang-en").setAttribute("href", "https://www.rolandholzer.com/");
+      document.querySelector("#hreflang-default").setAttribute("href", "https://www.rolandholzer.com/");
+
+      const personJsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Roland Holzer",
+        "jobTitle": isEnglish ? "Underwater Cinematographer" : "Unterwasserkameramann",
+        "url": config.canonical,
+        "sameAs": [
+          "https://www.instagram.com/roland.holzer",
+          "https://www.crew-united.com/de/Roland-Holzer_328179.html",
+          "https://www.aacamera.org/mitglied/roland.holzer/"
+        ]
+      };
+
+      document.getElementById("json-ld-person").textContent = JSON.stringify(personJsonLd, null, 2);
+    }
+
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+
+      document.querySelectorAll(".lang").forEach(el => {
+        el.style.display = "none";
+      });
+
+      document.querySelectorAll(".lang-" + lang).forEach(el => {
+        if (el.tagName === "BUTTON" || el.tagName === "A") {
+          el.style.display = "inline-block";
+        } else {
+          el.style.display = "block";
+        }
+      });
+
+   const navLinks = document.querySelectorAll(".nav-link");
+if (lang === "de") {
+  if (navLinks[0]) navLinks[0].textContent = "Ausgewählte Arbeiten";
+  if (navLinks[1]) navLinks[1].textContent = "Über Mich";
+  if (navLinks[2]) navLinks[2].textContent = "Leistungen";
+  if (navLinks[3]) navLinks[3].textContent = "Kontakt";
+} else {
+  if (navLinks[0]) navLinks[0].textContent = "Selected Work";
+  if (navLinks[1]) navLinks[1].textContent = "About";
+  if (navLinks[2]) navLinks[2].textContent = "Services";
+  if (navLinks[3]) navLinks[3].textContent = "Contact";
+}
+    }
+
+    function forceLang(lang) {
+      localStorage.setItem("preferredLang", lang);
+      setLang(lang);
+    }
+
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+
+    function openLightbox(el) {
+      const img = el.querySelector("img");
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.style.display = "flex";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+
+    window.addEventListener("scroll", () => {
+      const scrolled = window.scrollY;
+      const offset = scrolled * 0.25;
+      const scale = 1.08 + scrolled * 0.00015;
+      document.body.style.setProperty("--parallax-offset", `-${offset}px`);
+      document.body.style.setProperty("--parallax-scale", scale.toString());
+    });
+
+    window.addEventListener("DOMContentLoaded", () => {
+      const config = getCurrentConfig();
+      setMetaTags(config);
+
+      const forcedLang = localStorage.getItem("preferredLang");
+      if (forcedLang === "de" || forcedLang === "en") {
+        setLang(forcedLang);
+      } else {
+        setLang(config.lang);
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      const menu = document.getElementById("menu");
+      const toggle = document.querySelector(".menu-toggle");
+
+      if (
+        window.innerWidth < 900 &&
+        menu.classList.contains("show") &&
+        toggle &&
+        !menu.contains(event.target) &&
+        !toggle.contains(event.target)
+      ) {
+        menu.classList.remove("show");
+      }
+    });
+  </script>
+</body>
+</html>
