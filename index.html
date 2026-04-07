@@ -813,6 +813,43 @@
       .gallery figure:nth-child(1) { grid-column: auto; aspect-ratio: 2/3; }
       .about-stats { grid-template-columns: 1fr 1fr; }
     }
+    @media (max-width: 768px) {
+      .hero {
+        padding: 100px 20px 80px;
+        min-height: 100dvh;
+      }
+      .hero-content {
+        transform: translateY(-4vh);
+      }
+      .hero-bg {
+        background-attachment: scroll;
+        background-position: center center;
+      }
+      .hero h1 {
+        font-size: clamp(2.8rem, 12vw, 4.5rem);
+        line-height: 0.95;
+      }
+      .hero-eyebrow {
+        font-size: clamp(0.6rem, 3vw, 0.8rem);
+        letter-spacing: 0.2em;
+      }
+      .hero-sub {
+        font-size: clamp(0.6rem, 2.8vw, 0.85rem);
+        letter-spacing: 0.15em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 16px;
+      }
+      .btn-primary,
+      .btn-ghost {
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
