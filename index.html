@@ -316,7 +316,7 @@
     }
     .hero-eyebrow {
       display: inline-block;
-      font-size: 0.72rem;
+       font-size: clamp(0.5rem, 1.5vw, 0.9rem);
       letter-spacing: 0.32em;
       text-transform: uppercase;
       color: var(--teal);
@@ -339,7 +339,7 @@
     }
     .hero-sub {
       margin-top: 28px;
-      font-size: 0.85rem;
+      font-size: clamp(0.65rem, 1.2vw, 1rem);
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--muted);
@@ -399,7 +399,7 @@
     /* scroll indicator */
     .scroll-hint {
       position: absolute;
-      bottom: 20px; left: 50%;
+      bottom: 80px; left: 50%;
       transform: translateX(-50%);
       z-index: 2;
       display: flex;
@@ -1201,7 +1201,7 @@
         Ich melde mich innerhalb von 24 Stunden.
       </p>
       <p class="lang lang-en">
-        For film production information ℹ️ or technical questions — get in touch.
+        For information about film production or technical questions — get in touch.
         I respond within 24 hours.
       </p>
 
