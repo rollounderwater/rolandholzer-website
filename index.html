@@ -310,6 +310,7 @@
       pointer-events: none;
     }
     .hero-content {
+      transform: translateY(-8vh);
       position: relative; z-index: 2;
       max-width: 1000px;
     }
@@ -471,18 +472,18 @@
 
     /* ══════════════════════════════
        PORTFOLIO GRID
-    ══════════════════════════════
+    ══════════════════════════════*/
     .portfolio-intro {
       max-width: 560px;
       color: var(--muted);
       font-size: 0.9rem;
       margin-bottom: 40px;
       line-height: 1.8;
-    }*/
+    }
     .gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
+      gap: 12px;
       border-radius: var(--r-lg);
       overflow: hidden;
     }
@@ -1242,8 +1243,7 @@
   <p>
     © <span id="year"></span> Roland Holzer aac —
     <a href="#home">Underwater Cinematography</a> —
-    <a href="https://www.rolandholzer.at/">rolandholzer.at</a> ·
-    <a href="https://www.rolandholzer.com/">rolandholzer.com</a>
+    <a href="datenschutz.html">Datenschutz / Privacy</a>
   </p>
 </footer>
 
@@ -1379,8 +1379,24 @@
   document.querySelector("#canonical-link")?.setAttribute("href", config.canonical);
 </script>
 
+<!--
+  ============================================================
+  COOKIE-CONSENT-BANNER (DE/EN) für rolandholzer.com
+  ============================================================
+  
+  Zweisprachiger Cookie-Banner, der sich an die aktuell
+  gewählte Sprache der Website anpasst.
+  
+  Spracherkennung:
+  1. Prüft das html[lang]-Attribut
+  2. Falls nicht vorhanden: prüft ob .lang-en oder .lang-de aktiv ist
+  3. Fallback: Deutsch
+  
+  Einbindung: Diesen Code vor </body> in der Haupt-HTML-Datei einfügen.
+  ============================================================
+-->
+
 <style>
-  /* Cookie Banner Styles */
   .cookie-banner {
     position: fixed;
     bottom: 0;
@@ -1394,11 +1410,11 @@
     transform: translateY(100%);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  
+
   .cookie-banner.visible {
     transform: translateY(0);
   }
-  
+
   .cookie-banner-inner {
     max-width: 960px;
     margin: 0 auto;
@@ -1407,7 +1423,7 @@
     align-items: center;
     gap: 1.25rem;
   }
-  
+
   .cookie-banner-text {
     flex: 1;
     min-width: 280px;
@@ -1415,22 +1431,22 @@
     line-height: 1.6;
     color: #a3a3a3;
   }
-  
+
   .cookie-banner-text a {
     color: #60a5fa;
     text-decoration: none;
   }
-  
+
   .cookie-banner-text a:hover {
     text-decoration: underline;
   }
-  
+
   .cookie-banner-actions {
     display: flex;
     gap: 0.75rem;
     flex-shrink: 0;
   }
-  
+
   .cookie-btn {
     padding: 0.6rem 1.25rem;
     border-radius: 4px;
@@ -1442,27 +1458,27 @@
     letter-spacing: 0.02em;
     transition: background 0.2s, color 0.2s;
   }
-  
+
   .cookie-btn-accept {
     background: #ffffff;
     color: #0a0a0a;
   }
-  
+
   .cookie-btn-accept:hover {
     background: #e5e5e5;
   }
-  
+
   .cookie-btn-essential {
     background: transparent;
     color: #a3a3a3;
     border: 1px solid #333;
   }
-  
+
   .cookie-btn-essential:hover {
     border-color: #555;
     color: #d4d4d4;
   }
-  
+
   @media (max-width: 600px) {
     .cookie-banner-inner {
       flex-direction: column;
@@ -1479,23 +1495,10 @@
 
 <div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie-Einstellungen">
   <div class="cookie-banner-inner">
-    <div class="cookie-banner-text">
-      Diese Website verwendet Cookies. Technisch notwendige Cookies gewährleisten die Grundfunktionen der Website. 
-      Weitere Informationen finden Sie in unserer 
-      <a href="/datenschutz.html">Datenschutzerklärung</a>.
-      <!-- 
-        ⚠ Falls Analyse-/Marketing-Cookies verwendet werden, den Text anpassen:
-        "Darüber hinaus nutzen wir mit Ihrer Einwilligung Cookies für Analysezwecke, 
-        um unsere Website zu verbessern."
-      -->
-    </div>
+    <div class="cookie-banner-text" id="cookieText"></div>
     <div class="cookie-banner-actions">
-      <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies('all')">
-        Alle akzeptieren
-      </button>
-      <button class="cookie-btn cookie-btn-essential" onclick="acceptCookies('essential')">
-        Nur notwendige
-      </button>
+      <button class="cookie-btn cookie-btn-accept" id="cookieBtnAccept" onclick="acceptCookies('all')"></button>
+      <button class="cookie-btn cookie-btn-essential" id="cookieBtnEssential" onclick="acceptCookies('essential')"></button>
     </div>
   </div>
 </div>
@@ -1503,68 +1506,113 @@
 <script>
   (function() {
     'use strict';
-    
+
     var COOKIE_NAME = 'cookie_consent';
     var COOKIE_DAYS = 365;
-    
+
+    /* ── Translations ── */
+    var i18n = {
+      de: {
+        text: 'Diese Website verwendet Cookies. Technisch notwendige Cookies gewährleisten die Grundfunktionen der Website. Weitere Informationen finden Sie in unserer <a href="datenschutz.html">Datenschutzerklärung</a>.',
+        accept: 'Alle akzeptieren',
+        essential: 'Nur notwendige'
+      },
+      en: {
+        text: 'This website uses cookies. Technically necessary cookies ensure the basic functions of the website. For more information, please see our <a href="datenschutz.html">Privacy Policy</a>.',
+        accept: 'Accept all',
+        essential: 'Essential only'
+      }
+    };
+
+    /* ── Detect current language ── */
+    function detectLang() {
+      // 1. Check html lang attribute
+      var htmlLang = document.documentElement.lang;
+      if (htmlLang && htmlLang.substring(0, 2) === 'en') return 'en';
+      if (htmlLang && htmlLang.substring(0, 2) === 'de') return 'de';
+
+      // 2. Check for visible language sections (matches rolandholzer.com structure)
+      var enSection = document.querySelector('.lang-en.visible, .lang-en.active, [data-lang="en"].visible');
+      if (enSection) return 'en';
+
+      // 3. Check URL parameters or hash
+      if (window.location.hash.indexOf('en') !== -1) return 'en';
+      if (window.location.search.indexOf('lang=en') !== -1) return 'en';
+
+      // 4. Fallback
+      return 'de';
+    }
+
+    /* ── Apply language to banner ── */
+    function setBannerLang(lang) {
+      var t = i18n[lang] || i18n.de;
+      document.getElementById('cookieText').innerHTML = t.text;
+      document.getElementById('cookieBtnAccept').textContent = t.accept;
+      document.getElementById('cookieBtnEssential').textContent = t.essential;
+      document.getElementById('cookieBanner').setAttribute('aria-label',
+        lang === 'en' ? 'Cookie settings' : 'Cookie-Einstellungen'
+      );
+    }
+
+    /* ── Cookie helpers ── */
     function getCookie(name) {
       var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
       return match ? match[2] : null;
     }
-    
+
     function setCookie(name, value, days) {
       var date = new Date();
       date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-      document.cookie = name + '=' + value + 
-        ';expires=' + date.toUTCString() + 
+      document.cookie = name + '=' + value +
+        ';expires=' + date.toUTCString() +
         ';path=/;SameSite=Lax;Secure';
     }
-    
-    // Show banner if no consent given yet
+
+    /* ── Init ── */
     var consent = getCookie(COOKIE_NAME);
+
+    // Set language immediately
+    setBannerLang(detectLang());
+
     if (!consent) {
-      var banner = document.getElementById('cookieBanner');
-      // Small delay for animation
       setTimeout(function() {
-        banner.classList.add('visible');
+        document.getElementById('cookieBanner').classList.add('visible');
       }, 800);
     } else if (consent === 'all') {
-      // If user accepted all, load analytics here
       loadAnalytics();
     }
-    
-    // Global function called by buttons
+
+    /* ── Update banner language when site language changes ── */
+    // Observes html[lang] changes and class changes on language sections
+    var observer = new MutationObserver(function() {
+      setBannerLang(detectLang());
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
+
+    // Also observe body for class changes on language toggle elements
+    var body = document.body;
+    if (body) {
+      observer.observe(body, { subtree: true, attributes: true, attributeFilter: ['class'] });
+    }
+
+    /* ── Global functions ── */
     window.acceptCookies = function(level) {
       setCookie(COOKIE_NAME, level, COOKIE_DAYS);
-      var banner = document.getElementById('cookieBanner');
-      banner.classList.remove('visible');
-      
+      document.getElementById('cookieBanner').classList.remove('visible');
       if (level === 'all') {
         loadAnalytics();
       }
     };
-    
+
+    // Call this from your site's language switcher to update the banner
+    window.updateCookieBannerLang = function(lang) {
+      setBannerLang(lang);
+    };
+
     function loadAnalytics() {
       /*
-        ⚠ PLATZHALTER: Hier Analyse-/Marketing-Skripte laden,
-        z. B. Google Analytics, Matomo, etc.
-        
-        Beispiel für Google Analytics:
-        
-        var script = document.createElement('script');
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
-        script.async = true;
-        document.head.appendChild(script);
-        
-        script.onload = function() {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
-        };
-        
-        Falls keine Analyse-Cookies verwendet werden, 
-        kann diese Funktion leer bleiben.
+        ⚠ PLATZHALTER: Hier Analyse-/Marketing-Skripte laden.
+        Falls keine verwendet werden, kann diese Funktion leer bleiben.
       */
     }
   })();
