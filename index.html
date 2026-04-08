@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
  <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,8 +7,8 @@
   <link rel="icon" type="image/png" href="Gates_Mini.jpg" />
   <link rel="apple-touch-icon" href="Gates_Mini.jpg" />
   <!-- ═══ PRIMARY SEO ═══ -->
-  <title>Unterwasserkameramann Österreich | Roland Holzer aac | Unterwasser Cinematographer</title>
-  <meta name="description" content="Roland Holzer – professioneller Unterwasserkameramann (aac) aus Wien. Spielfilm, TV, Werbung · Gates-Gehäuse für ARRI & RED · bis 76 m Tiefe · europaweit buchbar." />
+  <title>Underwater Cinematographer Austria | Roland Holzer aac | Underwater Camera Europe</title>
+  <meta name="description" content="Roland Holzer – professional underwater cinematographer (aac) based in Austria. Feature films, TV & commercials · Gates housings for ARRI & RED · up to 76 m depth · available across Europe." />
   <meta name="keywords" content="Unterwasserkameramann, underwater cinematographer, Unterwasserkamera Film, underwater camera operator, Unterwasserfilme Österreich, underwater filming Europe, ARRI underwater housing, RED underwater camera, Unterwasserkamera Wien, underwater cameraman Austria, Spielfilm Unterwasser, feature film underwater" />
   <meta name="author" content="Roland Holzer" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -29,8 +29,8 @@
   <meta property="og:image" id="og-image" content="https://www.rolandholzer.at/herho.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:locale" content="de_AT" />
-  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="de_AT" />
   <meta property="og:site_name" content="Roland Holzer Underwater Cinematography" />
 
   <!-- ═══ TWITTER CARD ═══ -->
@@ -1291,6 +1291,9 @@
         <a href="https://www.aacamera.org/mitglied/roland.holzer/" target="_blank" rel="noopener noreferrer" title="AAC – Austrian Association of Cinematographers">
           <img src="aac.png" alt="AAC – Austrian Association of Cinematographers" />
         </a>
+          <a href="https://www.imdb.com/name/nm5680026/" target="_blank" rel="noopener noreferrer" title="Roland Holzer auf IMDb">
+    <img src="imdbpro.jpg" alt="IMDb" />
+  </a>
       </div>
     </div>
 
@@ -1340,10 +1343,10 @@
     "www.underwatercamera.at":{ lang:"de", canonical:"https://www.underwatercamera.at/" }
   };
 
-  function getConfig() {
-    const host = location.hostname.toLowerCase();
-    return DOMAIN_CONFIG[host] || { lang:"de", canonical: location.origin + "/" };
-  }
+function getConfig() {
+  const host = location.hostname.toLowerCase();
+  return DOMAIN_CONFIG[host] || { lang:"en", canonical: location.origin + "/" };
+}
 
   /* ── LANGUAGE ── */
   function setLang(lang) {
@@ -1449,7 +1452,7 @@
   /* ── INIT ── */
   const config = getConfig();
   const savedLang = localStorage.getItem("preferredLang");
-  const initLang  = (savedLang === "de" || savedLang === "en") ? savedLang : config.lang;
+  const initLang = (savedLang === "de" || savedLang === "en") ? savedLang  : config.lang;
   setLang(initLang);
   document.getElementById("year").textContent = new Date().getFullYear();
   document.querySelector("#canonical-link")?.setAttribute("href", config.canonical);
