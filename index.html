@@ -1048,6 +1048,15 @@
   on every production is to deliver images that feel seamless within the visual language of the film — so that 
   the audience forgets they were shot beneath the surface.</p>
 </div>
+<div>
+  <img src="DSC_8665_DxO.jpg" 
+       alt="Roland Holzer – Unterwasserkameramann Österreich" 
+       style="width:100%; border-radius:4px; filter:saturate(0.9); margin-top:12px;" />
+  <p style="font-size:0.65rem; letter-spacing:0.12em; color:rgba(180,220,240,0.4); margin-top:5px; text-align:right;">
+    <span class="lang lang-de">© Foto: Heinz Toperczer</span>
+    <span class="lang lang-en">© Photo: Heinz Toperczer</span>
+  </p>
+</div>
       <div class="about-badges">
         <span class="badge">aac Member</span>
         <span class="badge">FH St. Pölten</span>
@@ -1452,7 +1461,7 @@ function getConfig() {
   /* ── INIT ── */
   const config = getConfig();
   const savedLang = localStorage.getItem("preferredLang");
-  const initLang = (savedLang === "de" || savedLang === "en") ? savedLang  : config.lang;
+const initLang = (savedLang === "de" || savedLang === "en") ? savedLang  : config.lang;
   setLang(initLang);
   document.getElementById("year").textContent = new Date().getFullYear();
   document.querySelector("#canonical-link")?.setAttribute("href", config.canonical);
