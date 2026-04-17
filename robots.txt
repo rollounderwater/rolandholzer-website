@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.rolandholzer.com/sitemap.xml
+Sitemap: https://rolandholzer.com/sitemap.xml
